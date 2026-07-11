@@ -1,0 +1,5780 @@
+{
+ "actions": {},
+ "binding": {},
+ "borderStyle": {
+  "allBorders": 0,
+  "allCornerRadius": 0,
+  "borderColor": {
+   "color": "#00000000",
+   "type": "SOLID"
+  },
+  "bordersBottom": 0,
+  "bordersLeft": 0,
+  "bordersRight": 0,
+  "bordersTop": 0,
+  "radiusBottomLeft": 0,
+  "radiusBottomRight": 0,
+  "radiusTopLeft": 0,
+  "radiusTopRight": 0
+ },
+ "children": [
+  {
+   "actions": {},
+   "binding": {},
+   "borderStyle": {
+    "allBorders": 0,
+    "allCornerRadius": 0,
+    "borderColor": {
+     "color": "#00000000",
+     "type": "SOLID"
+    },
+    "bordersBottom": 0,
+    "bordersLeft": 0,
+    "bordersRight": 0,
+    "bordersTop": 0,
+    "radiusBottomLeft": 0,
+    "radiusBottomRight": 0,
+    "radiusTopLeft": 0,
+    "radiusTopRight": 0
+   },
+   "children": [
+    {
+     "actions": {},
+     "binding": {
+      "linearGauge.gaugeColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CarSettings_CurrentDisplayedRPMPercent\").value))=>v>90?\"#FF1744\":(v>75?\"#FFB300\":\"#00E5FF\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "linearGauge.value": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CarSettings_CurrentDisplayedRPMPercent\").value))=>(isNaN(v)||v<0)?0:Math.min(100,v))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF161616",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 780,
+      "x": 0,
+      "y": 0
+     },
+     "id": 2,
+     "linearGauge": {
+      "alternateStyle": {
+       "gaugeColor": {
+        "color": "#03A200",
+        "type": "SOLID"
+       },
+       "gaugeImage": "",
+       "useAlternateStyle": false
+      },
+      "backgroundImage": "",
+      "gaugeAlignment": "AlignLeft",
+      "gaugeColor": {
+       "color": "#FF00E5FF",
+       "type": "SOLID"
+      },
+      "gaugeImage": "",
+      "gaugeOrientation": "Horizontal",
+      "maximum": 100,
+      "minimum": 0,
+      "value": 0
+     },
+     "macros": {},
+     "name": "RPM bar",
+     "plugins": [],
+     "type": "LinearGauge.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#66000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 2,
+      "x": 194,
+      "y": 0
+     },
+     "id": 3,
+     "macros": {},
+     "name": "rpm tick 1",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#66000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 2,
+      "x": 389,
+      "y": 0
+     },
+     "id": 4,
+     "macros": {},
+     "name": "rpm tick 2",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#66000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 2,
+      "x": 584,
+      "y": 0
+     },
+     "id": 5,
+     "macros": {},
+     "name": "rpm tick 3",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Rpm\").value))=>(isNaN(v)||v<0||v>1e30)?\"\":Math.round(v)+\" rpm\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 22,
+      "locked": false,
+      "visible": true,
+      "width": 130,
+      "x": 10,
+      "y": 24
+     },
+     "id": 6,
+     "macros": {},
+     "name": "rpm readout",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignLeft",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Odometer\").value))=>(isNaN(v)||v<0||v>1e30)?\"\":Math.round(v)+\" km\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 140,
+      "x": 530,
+      "y": 24
+     },
+     "id": 7,
+     "macros": {},
+     "name": "odometer",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignRight",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((b=Number(Telemetry.get(\"v1/gameData/LBlinker\").value),h=Number(Telemetry.get(\"v1/gameData/HazardWarning\").value))=>(b==1||h==1)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 42,
+      "locked": false,
+      "visible": true,
+      "width": 46,
+      "x": 157,
+      "y": 28
+     },
+     "id": 8,
+     "macros": {},
+     "name": "blinker L",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF00E676",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 32,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "◀",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((b=Number(Telemetry.get(\"v1/gameData/RBlinker\").value),h=Number(Telemetry.get(\"v1/gameData/HazardWarning\").value))=>(b==1||h==1)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 42,
+      "locked": false,
+      "visible": true,
+      "width": 46,
+      "x": 477,
+      "y": 28
+     },
+     "id": 9,
+     "macros": {},
+     "name": "blinker R",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF00E676",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 32,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "▶",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 6,
+      "allCornerRadius": 35,
+      "borderColor": {
+       "color": "#FFD50000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 6,
+      "bordersLeft": 6,
+      "bordersRight": 6,
+      "bordersTop": 6,
+      "radiusBottomLeft": 35,
+      "radiusBottomRight": 35,
+      "radiusTopLeft": 35,
+      "radiusTopRight": 35
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FFFFFFFF",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#FFD50000",
+       "type": "SOLID"
+      },
+      "borderRadius": 35,
+      "borderWidth": 6,
+      "height": 70,
+      "locked": false,
+      "visible": true,
+      "width": 70,
+      "x": 30,
+      "y": 52
+     },
+     "id": 10,
+     "macros": {},
+     "name": "limit ring",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?Math.round(v*3.6).toString():\"\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 70,
+      "locked": false,
+      "visible": true,
+      "width": 70,
+      "x": 30,
+      "y": 52
+     },
+     "id": 11,
+     "macros": {},
+     "name": "limit value",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF000000",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 30,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CruiseControl\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?\"#00E676\":\"#2E2E2E\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CruiseControl\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?\"CRUISE \"+Math.round(v):\"CRUISE\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 30,
+      "locked": false,
+      "visible": true,
+      "width": 150,
+      "x": 0,
+      "y": 138
+     },
+     "id": 12,
+     "macros": {},
+     "name": "cruise",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 22,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "CRUISE",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((s=Number(Telemetry.get(\"v1/gameData/SpeedKmh\").value),l=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value)*3.6)=>(!isNaN(s)&&!isNaN(l)&&l>0.5&&l<1e30&&Math.abs(s)>l+2)?\"#FF1744\":\"#FFFFFF\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/SpeedKmh\").value))=>(isNaN(v)||v<-1e30||v>1e30)?\"--\":Math.round(Math.abs(v)).toString())()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 132,
+      "locked": false,
+      "visible": true,
+      "width": 380,
+      "x": 150,
+      "y": 44
+     },
+     "id": 13,
+     "macros": {},
+     "name": "speed",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FFFFFFFF",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 118,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "--",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 22,
+      "locked": false,
+      "visible": true,
+      "width": 380,
+      "x": 150,
+      "y": 172
+     },
+     "id": 14,
+     "macros": {},
+     "name": "speed unit",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "km/h",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 2,
+      "allCornerRadius": 14,
+      "borderColor": {
+       "color": "#FF333333",
+       "type": "SOLID"
+      },
+      "bordersBottom": 2,
+      "bordersLeft": 2,
+      "bordersRight": 2,
+      "bordersTop": 2,
+      "radiusBottomLeft": 14,
+      "radiusBottomRight": 14,
+      "radiusTopLeft": 14,
+      "radiusTopRight": 14
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF0D0D0D",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#FF333333",
+       "type": "SOLID"
+      },
+      "borderRadius": 14,
+      "borderWidth": 2,
+      "height": 132,
+      "locked": false,
+      "visible": true,
+      "width": 132,
+      "x": 540,
+      "y": 44
+     },
+     "id": 15,
+     "macros": {},
+     "name": "gear panel",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Gear\").value))=>(isNaN(v)||v<-1e30||v>1e30)?\"#9E9E9E\":(v<0?\"#FFB300\":(v==0?\"#9E9E9E\":\"#00E676\")))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Gear\").value))=>{if((isNaN(v)||v<-1e30||v>1e30))return\"-\";if(v==0)return\"N\";if(v==-1)return\"R\";if(v<0)return\"R\"+Math.abs(Math.round(v));return Math.round(v).toString();})()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 132,
+      "locked": false,
+      "visible": true,
+      "width": 132,
+      "x": 540,
+      "y": 44
+     },
+     "id": 16,
+     "macros": {},
+     "name": "gear",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 96,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "-",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 18,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 40
+     },
+     "id": 17,
+     "macros": {},
+     "name": "fuel label",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "FUEL",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "linearGauge.gaugeColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0)?\"#2E2E2E\":(v<=10?\"#FF1744\":(v<=20?\"#FFB300\":\"#00E676\")))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "linearGauge.value": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0)?0:Math.min(100,v))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF161616",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 62
+     },
+     "id": 18,
+     "linearGauge": {
+      "alternateStyle": {
+       "gaugeColor": {
+        "color": "#03A200",
+        "type": "SOLID"
+       },
+       "gaugeImage": "",
+       "useAlternateStyle": false
+      },
+      "backgroundImage": "",
+      "gaugeAlignment": "AlignLeft",
+      "gaugeColor": {
+       "color": "#FF00E676",
+       "type": "SOLID"
+      },
+      "gaugeImage": "",
+      "gaugeOrientation": "Horizontal",
+      "maximum": 100,
+      "minimum": 0,
+      "value": 0
+     },
+     "macros": {},
+     "name": "fuel bar",
+     "plugins": [],
+     "type": "LinearGauge.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0)?\"#2E2E2E\":(v<=10?\"#FF1744\":(v<=20?\"#FFB300\":\"#00E676\")))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0||v>1e30)?\"--%\":Math.round(v)+\"%\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 90
+     },
+     "id": 19,
+     "macros": {},
+     "name": "fuel pct",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FFFFFFFF",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 30,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "--%",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Fuel\").value))=>(isNaN(v)||v<0||v>1e30)?\"\":Math.round(v)+\" L\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 130
+     },
+     "id": 20,
+     "macros": {},
+     "name": "fuel liters",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 15,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRange\").value))=>(!isNaN(v)&&v>=0&&v<100)?\"#FFB300\":\"#8A8A8A\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRange\").value))=>(isNaN(v)||v<0||v>1e30)?\"-- km\":Math.round(v)+\" km\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 150
+     },
+     "id": 21,
+     "macros": {},
+     "name": "fuel range",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF8A8A8A",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 15,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF1F1F1F",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 2,
+      "locked": false,
+      "visible": true,
+      "width": 780,
+      "x": 0,
+      "y": 197
+     },
+     "id": 22,
+     "macros": {},
+     "name": "separator",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "(Number(Telemetry.get(\"v1/gameData/ParkingBrake\").value)==1)?\"#FF1744\":\"#2E2E2E\""
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 30,
+      "x": 10,
+      "y": 205
+     },
+     "id": 23,
+     "macros": {},
+     "name": "park brake",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "P",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((e=Number(Telemetry.get(\"v1/gameData/AirPressEmergency\").value),w=Number(Telemetry.get(\"v1/gameData/AirPressWarning\").value))=>e==1?\"#FF1744\":(w==1?\"#FFB300\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 54,
+      "x": 50,
+      "y": 205
+     },
+     "id": 24,
+     "macros": {},
+     "name": "air pressure",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "AIR",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((s=Number(Telemetry.get(\"v1/gameData/EngineStarted\").value),p=Number(Telemetry.get(\"v1/gameData/OilPressure\").value))=>(s==1&&!isNaN(p)&&p>=0&&p<10)?\"#FF1744\":\"#2E2E2E\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 48,
+      "x": 112,
+      "y": 205
+     },
+     "id": 25,
+     "macros": {},
+     "name": "oil pressure",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "OIL",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "(Number(Telemetry.get(\"v1/gameData/BatteryWarningVolt\").value)==1)?\"#FF1744\":\"#2E2E2E\""
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 62,
+      "x": 166,
+      "y": 205
+     },
+     "id": 26,
+     "macros": {},
+     "name": "battery",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "BATT",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((w=Number(Telemetry.get(\"v1/gameData/WaterTempWarning\").value),v=Number(Telemetry.get(\"v1/gameData/WaterTemp\").value))=>(w==1||v>105)?\"#FFB300\":\"#8A8A8A\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/WaterTemp\").value))=>(isNaN(v)||v<-1e30||v>1e30)?\"--°C\":Math.round(v)+\"°C\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 80,
+      "x": 236,
+      "y": 205
+     },
+     "id": 27,
+     "macros": {},
+     "name": "water temp",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "--°C",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((e=Number(Telemetry.get(\"v1/gameData/EngineDamage\").value),g=Number(Telemetry.get(\"v1/gameData/GearBoxDamage\").value),m=Math.max(isNaN(e)?0:e,isNaN(g)?0:g))=>m>25?\"#FF1744\":(m>5?\"#FFB300\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((e=Number(Telemetry.get(\"v1/gameData/EngineDamage\").value),g=Number(Telemetry.get(\"v1/gameData/GearBoxDamage\").value),m=Math.max(isNaN(e)?0:e,isNaN(g)?0:g))=>(m<0||m>100)?\"DMG\":\"DMG \"+Math.round(m)+\"%\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 96,
+      "x": 324,
+      "y": 205
+     },
+     "id": 28,
+     "macros": {},
+     "name": "damage",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "DMG",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "(Number(Telemetry.get(\"v1/gameData/EngineBrake\").value)==1)?\"#FFB300\":\"#2E2E2E\""
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 44,
+      "x": 428,
+      "y": 205
+     },
+     "id": 29,
+     "macros": {},
+     "name": "engine brake",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "EB",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/RetarderLevel\").value))=>(!isNaN(v)&&v>0&&v<1e30)?\"#00E5FF\":\"#2E2E2E\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/RetarderLevel\").value))=>(!isNaN(v)&&v>0&&v<1e30)?\"RET \"+Math.round(v):\"RET\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 72,
+      "x": 480,
+      "y": 205
+     },
+     "id": 30,
+     "macros": {},
+     "name": "retarder",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "RET",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value)*100)=>v>10?\"#FF1744\":(v>0.5?\"#FFB300\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value))=>(isNaN(v)||v<0||v>1)?\"CARGO\":\"CARGO \"+Math.round(v*100)+\"%\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 112,
+      "x": 560,
+      "y": 205
+     },
+     "id": 31,
+     "macros": {},
+     "name": "cargo",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "CARGO",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((h=Number(Telemetry.get(\"v1/gameData/HighBeamLight\").value),l=Number(Telemetry.get(\"v1/gameData/LowBeamLight\").value))=>h==1?\"#40C4FF\":(l==1?\"#00E676\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 205
+     },
+     "id": 32,
+     "macros": {},
+     "name": "beam",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "BEAM",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    }
+   ],
+   "effect": {
+    "blinkDelay": 250,
+    "blinkEnabled": false,
+    "blurRadius": 0,
+    "gravitySensorEnabled": false,
+    "opacity": 100,
+    "rotation": 0
+   },
+   "general": {
+    "backgroundColor": {
+     "color": "#FF000000",
+     "type": "SOLID"
+    },
+    "borderColor": {
+     "color": "#00000000",
+     "type": "SOLID"
+    },
+    "borderRadius": 0,
+    "borderWidth": 0,
+    "height": 248,
+    "locked": false,
+    "visible": true,
+    "width": 780,
+    "x": 0,
+    "y": 0
+   },
+   "guides": [],
+   "id": 1,
+   "image": {
+    "src": ""
+   },
+   "macros": {},
+   "name": "ETS2 Truck Cluster (km/h)",
+   "plugins": [],
+   "type": "Screen.qml"
+  },
+  {
+   "actions": {},
+   "binding": {},
+   "borderStyle": {
+    "allBorders": 0,
+    "allCornerRadius": 0,
+    "borderColor": {
+     "color": "#00000000",
+     "type": "SOLID"
+    },
+    "bordersBottom": 0,
+    "bordersLeft": 0,
+    "bordersRight": 0,
+    "bordersTop": 0,
+    "radiusBottomLeft": 0,
+    "radiusBottomRight": 0,
+    "radiusTopLeft": 0,
+    "radiusTopRight": 0
+   },
+   "children": [
+    {
+     "actions": {},
+     "binding": {
+      "linearGauge.gaugeColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CarSettings_CurrentDisplayedRPMPercent\").value))=>v>90?\"#FF1744\":(v>75?\"#FFB300\":\"#00E5FF\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "linearGauge.value": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CarSettings_CurrentDisplayedRPMPercent\").value))=>(isNaN(v)||v<0)?0:Math.min(100,v))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF161616",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 780,
+      "x": 0,
+      "y": 0
+     },
+     "id": 34,
+     "linearGauge": {
+      "alternateStyle": {
+       "gaugeColor": {
+        "color": "#03A200",
+        "type": "SOLID"
+       },
+       "gaugeImage": "",
+       "useAlternateStyle": false
+      },
+      "backgroundImage": "",
+      "gaugeAlignment": "AlignLeft",
+      "gaugeColor": {
+       "color": "#FF00E5FF",
+       "type": "SOLID"
+      },
+      "gaugeImage": "",
+      "gaugeOrientation": "Horizontal",
+      "maximum": 100,
+      "minimum": 0,
+      "value": 0
+     },
+     "macros": {},
+     "name": "RPM bar",
+     "plugins": [],
+     "type": "LinearGauge.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#66000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 2,
+      "x": 194,
+      "y": 0
+     },
+     "id": 35,
+     "macros": {},
+     "name": "rpm tick 1",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#66000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 2,
+      "x": 389,
+      "y": 0
+     },
+     "id": 36,
+     "macros": {},
+     "name": "rpm tick 2",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#66000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 2,
+      "x": 584,
+      "y": 0
+     },
+     "id": 37,
+     "macros": {},
+     "name": "rpm tick 3",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Rpm\").value))=>(isNaN(v)||v<0||v>1e30)?\"\":Math.round(v)+\" rpm\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 22,
+      "locked": false,
+      "visible": true,
+      "width": 130,
+      "x": 10,
+      "y": 24
+     },
+     "id": 38,
+     "macros": {},
+     "name": "rpm readout",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignLeft",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Odometer\").value)*0.621371)=>(isNaN(v)||v<0||v>1e30)?\"\":Math.round(v)+\" mi\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 140,
+      "x": 530,
+      "y": 24
+     },
+     "id": 39,
+     "macros": {},
+     "name": "odometer",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignRight",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((b=Number(Telemetry.get(\"v1/gameData/LBlinker\").value),h=Number(Telemetry.get(\"v1/gameData/HazardWarning\").value))=>(b==1||h==1)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 42,
+      "locked": false,
+      "visible": true,
+      "width": 46,
+      "x": 157,
+      "y": 28
+     },
+     "id": 40,
+     "macros": {},
+     "name": "blinker L",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF00E676",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 32,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "◀",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((b=Number(Telemetry.get(\"v1/gameData/RBlinker\").value),h=Number(Telemetry.get(\"v1/gameData/HazardWarning\").value))=>(b==1||h==1)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 42,
+      "locked": false,
+      "visible": true,
+      "width": 46,
+      "x": 477,
+      "y": 28
+     },
+     "id": 41,
+     "macros": {},
+     "name": "blinker R",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF00E676",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 32,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "▶",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 6,
+      "allCornerRadius": 35,
+      "borderColor": {
+       "color": "#FFD50000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 6,
+      "bordersLeft": 6,
+      "bordersRight": 6,
+      "bordersTop": 6,
+      "radiusBottomLeft": 35,
+      "radiusBottomRight": 35,
+      "radiusTopLeft": 35,
+      "radiusTopRight": 35
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FFFFFFFF",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#FFD50000",
+       "type": "SOLID"
+      },
+      "borderRadius": 35,
+      "borderWidth": 6,
+      "height": 70,
+      "locked": false,
+      "visible": true,
+      "width": 70,
+      "x": 30,
+      "y": 52
+     },
+     "id": 42,
+     "macros": {},
+     "name": "limit ring",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "general.visible": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?1:0)()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?Math.round(v*2.2369363).toString():\"\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 70,
+      "locked": false,
+      "visible": true,
+      "width": 70,
+      "x": 30,
+      "y": 52
+     },
+     "id": 43,
+     "macros": {},
+     "name": "limit value",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF000000",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 30,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CruiseControlMph\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?\"#00E676\":\"#2E2E2E\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CruiseControlMph\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?\"CRUISE \"+Math.round(v):\"CRUISE\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 30,
+      "locked": false,
+      "visible": true,
+      "width": 150,
+      "x": 0,
+      "y": 138
+     },
+     "id": 44,
+     "macros": {},
+     "name": "cruise",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 22,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "CRUISE",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((s=Number(Telemetry.get(\"v1/gameData/SpeedMph\").value),l=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value)*2.2369363)=>(!isNaN(s)&&!isNaN(l)&&l>0.5&&l<1e30&&Math.abs(s)>l+2)?\"#FF1744\":\"#FFFFFF\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/SpeedMph\").value))=>(isNaN(v)||v<-1e30||v>1e30)?\"--\":Math.round(Math.abs(v)).toString())()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 132,
+      "locked": false,
+      "visible": true,
+      "width": 380,
+      "x": 150,
+      "y": 44
+     },
+     "id": 45,
+     "macros": {},
+     "name": "speed",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FFFFFFFF",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 118,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "--",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 22,
+      "locked": false,
+      "visible": true,
+      "width": 380,
+      "x": 150,
+      "y": 172
+     },
+     "id": 46,
+     "macros": {},
+     "name": "speed unit",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "mph",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 2,
+      "allCornerRadius": 14,
+      "borderColor": {
+       "color": "#FF333333",
+       "type": "SOLID"
+      },
+      "bordersBottom": 2,
+      "bordersLeft": 2,
+      "bordersRight": 2,
+      "bordersTop": 2,
+      "radiusBottomLeft": 14,
+      "radiusBottomRight": 14,
+      "radiusTopLeft": 14,
+      "radiusTopRight": 14
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF0D0D0D",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#FF333333",
+       "type": "SOLID"
+      },
+      "borderRadius": 14,
+      "borderWidth": 2,
+      "height": 132,
+      "locked": false,
+      "visible": true,
+      "width": 132,
+      "x": 540,
+      "y": 44
+     },
+     "id": 47,
+     "macros": {},
+     "name": "gear panel",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Gear\").value))=>(isNaN(v)||v<-1e30||v>1e30)?\"#9E9E9E\":(v<0?\"#FFB300\":(v==0?\"#9E9E9E\":\"#00E676\")))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Gear\").value))=>{if((isNaN(v)||v<-1e30||v>1e30))return\"-\";if(v==0)return\"N\";if(v==-1)return\"R\";if(v<0)return\"R\"+Math.abs(Math.round(v));return Math.round(v).toString();})()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 132,
+      "locked": false,
+      "visible": true,
+      "width": 132,
+      "x": 540,
+      "y": 44
+     },
+     "id": 48,
+     "macros": {},
+     "name": "gear",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 96,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "-",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 18,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 40
+     },
+     "id": 49,
+     "macros": {},
+     "name": "fuel label",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "FUEL",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "linearGauge.gaugeColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0)?\"#2E2E2E\":(v<=10?\"#FF1744\":(v<=20?\"#FFB300\":\"#00E676\")))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "linearGauge.value": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0)?0:Math.min(100,v))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF161616",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 62
+     },
+     "id": 50,
+     "linearGauge": {
+      "alternateStyle": {
+       "gaugeColor": {
+        "color": "#03A200",
+        "type": "SOLID"
+       },
+       "gaugeImage": "",
+       "useAlternateStyle": false
+      },
+      "backgroundImage": "",
+      "gaugeAlignment": "AlignLeft",
+      "gaugeColor": {
+       "color": "#FF00E676",
+       "type": "SOLID"
+      },
+      "gaugeImage": "",
+      "gaugeOrientation": "Horizontal",
+      "maximum": 100,
+      "minimum": 0,
+      "value": 0
+     },
+     "macros": {},
+     "name": "fuel bar",
+     "plugins": [],
+     "type": "LinearGauge.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0)?\"#2E2E2E\":(v<=10?\"#FF1744\":(v<=20?\"#FFB300\":\"#00E676\")))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRemainder\").value))=>(isNaN(v)||v<0||v>1e30)?\"--%\":Math.round(v)+\"%\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 90
+     },
+     "id": 51,
+     "macros": {},
+     "name": "fuel pct",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FFFFFFFF",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 30,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "--%",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/Fuel\").value))=>(isNaN(v)||v<0||v>1e30)?\"\":Math.round(v)+\" L\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 130
+     },
+     "id": 52,
+     "macros": {},
+     "name": "fuel liters",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF9E9E9E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 15,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRange\").value)*0.621371)=>(!isNaN(v)&&v>=0&&v<62)?\"#FFB300\":\"#8A8A8A\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/FuelRange\").value)*0.621371)=>(isNaN(v)||v<0||v>1e30)?\"-- mi\":Math.round(v)+\" mi\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 20,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 150
+     },
+     "id": 53,
+     "macros": {},
+     "name": "fuel range",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF8A8A8A",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 15,
+      "fontWeight": 500,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {},
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "innerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#FFFFFF",
+        "type": "SOLID"
+       },
+       "size": 0
+      },
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#FF1F1F1F",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 2,
+      "locked": false,
+      "visible": true,
+      "width": 780,
+      "x": 0,
+      "y": 197
+     },
+     "id": 54,
+     "macros": {},
+     "name": "separator",
+     "plugins": [],
+     "type": "Rectangle.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "(Number(Telemetry.get(\"v1/gameData/ParkingBrake\").value)==1)?\"#FF1744\":\"#2E2E2E\""
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 30,
+      "x": 10,
+      "y": 205
+     },
+     "id": 55,
+     "macros": {},
+     "name": "park brake",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "P",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((e=Number(Telemetry.get(\"v1/gameData/AirPressEmergency\").value),w=Number(Telemetry.get(\"v1/gameData/AirPressWarning\").value))=>e==1?\"#FF1744\":(w==1?\"#FFB300\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 54,
+      "x": 50,
+      "y": 205
+     },
+     "id": 56,
+     "macros": {},
+     "name": "air pressure",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "AIR",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((s=Number(Telemetry.get(\"v1/gameData/EngineStarted\").value),p=Number(Telemetry.get(\"v1/gameData/OilPressure\").value))=>(s==1&&!isNaN(p)&&p>=0&&p<10)?\"#FF1744\":\"#2E2E2E\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 48,
+      "x": 112,
+      "y": 205
+     },
+     "id": 57,
+     "macros": {},
+     "name": "oil pressure",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "OIL",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "(Number(Telemetry.get(\"v1/gameData/BatteryWarningVolt\").value)==1)?\"#FF1744\":\"#2E2E2E\""
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 62,
+      "x": 166,
+      "y": 205
+     },
+     "id": 58,
+     "macros": {},
+     "name": "battery",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "BATT",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((w=Number(Telemetry.get(\"v1/gameData/WaterTempWarning\").value),v=Number(Telemetry.get(\"v1/gameData/WaterTemp\").value))=>(w==1||v>105)?\"#FFB300\":\"#8A8A8A\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/WaterTemp\").value))=>(isNaN(v)||v<-1e30||v>1e30)?\"--°C\":Math.round(v)+\"°C\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 80,
+      "x": 236,
+      "y": 205
+     },
+     "id": 59,
+     "macros": {},
+     "name": "water temp",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "--°C",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((e=Number(Telemetry.get(\"v1/gameData/EngineDamage\").value),g=Number(Telemetry.get(\"v1/gameData/GearBoxDamage\").value),m=Math.max(isNaN(e)?0:e,isNaN(g)?0:g))=>m>25?\"#FF1744\":(m>5?\"#FFB300\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((e=Number(Telemetry.get(\"v1/gameData/EngineDamage\").value),g=Number(Telemetry.get(\"v1/gameData/GearBoxDamage\").value),m=Math.max(isNaN(e)?0:e,isNaN(g)?0:g))=>(m<0||m>100)?\"DMG\":\"DMG \"+Math.round(m)+\"%\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 96,
+      "x": 324,
+      "y": 205
+     },
+     "id": 60,
+     "macros": {},
+     "name": "damage",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "DMG",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "(Number(Telemetry.get(\"v1/gameData/EngineBrake\").value)==1)?\"#FFB300\":\"#2E2E2E\""
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 44,
+      "x": 428,
+      "y": 205
+     },
+     "id": 61,
+     "macros": {},
+     "name": "engine brake",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 21,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "EB",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/RetarderLevel\").value))=>(!isNaN(v)&&v>0&&v<1e30)?\"#00E5FF\":\"#2E2E2E\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/RetarderLevel\").value))=>(!isNaN(v)&&v>0&&v<1e30)?\"RET \"+Math.round(v):\"RET\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 72,
+      "x": 480,
+      "y": 205
+     },
+     "id": 62,
+     "macros": {},
+     "name": "retarder",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "RET",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value)*100)=>v>10?\"#FF1744\":(v>0.5?\"#FFB300\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      },
+      "text.text": {
+       "methods": [
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value))=>(isNaN(v)||v<0||v>1)?\"CARGO\":\"CARGO \"+Math.round(v*100)+\"%\")()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 112,
+      "x": 560,
+      "y": 205
+     },
+     "id": 63,
+     "macros": {},
+     "name": "cargo",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "CARGO",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    },
+    {
+     "actions": {},
+     "binding": {
+      "text.fontColor": {
+       "methods": [
+        "((h=Number(Telemetry.get(\"v1/gameData/HighBeamLight\").value),l=Number(Telemetry.get(\"v1/gameData/LowBeamLight\").value))=>h==1?\"#40C4FF\":(l==1?\"#00E676\":\"#2E2E2E\"))()"
+       ],
+       "type": "METHOD_CHAINING"
+      }
+     },
+     "borderStyle": {
+      "allBorders": 0,
+      "allCornerRadius": 0,
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "bordersBottom": 0,
+      "bordersLeft": 0,
+      "bordersRight": 0,
+      "bordersTop": 0,
+      "radiusBottomLeft": 0,
+      "radiusBottomRight": 0,
+      "radiusTopLeft": 0,
+      "radiusTopRight": 0
+     },
+     "children": [],
+     "effect": {
+      "blinkDelay": 250,
+      "blinkEnabled": false,
+      "blurRadius": 0,
+      "gravitySensorEnabled": false,
+      "opacity": 100,
+      "outerShadow": {
+       "blur": 0,
+       "color": {
+        "color": "#00000000",
+        "type": "SOLID"
+       },
+       "depth": 0,
+       "direction": 0
+      },
+      "rotation": 0
+     },
+     "general": {
+      "backgroundColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "borderRadius": 0,
+      "borderWidth": 0,
+      "height": 38,
+      "locked": false,
+      "visible": true,
+      "width": 86,
+      "x": 686,
+      "y": 205
+     },
+     "id": 64,
+     "macros": {},
+     "name": "beam",
+     "plugins": [],
+     "text": {
+      "fontColor": {
+       "color": "#FF2E2E2E",
+       "type": "SOLID"
+      },
+      "fontFamily": "Roboto",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "horizontalAlignment": "AlignCenter",
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 0,
+      "text": "BEAM",
+      "verticalAlignment": "AlignCenter",
+      "wrapText": false
+     },
+     "textEffect": {
+      "shadowBlur": 0,
+      "shadowColor": {
+       "color": "#00000000",
+       "type": "SOLID"
+      },
+      "shadowDepth": 0,
+      "shadowDirection": 0
+     },
+     "type": "Text.qml"
+    }
+   ],
+   "effect": {
+    "blinkDelay": 250,
+    "blinkEnabled": false,
+    "blurRadius": 0,
+    "gravitySensorEnabled": false,
+    "opacity": 100,
+    "rotation": 0
+   },
+   "general": {
+    "backgroundColor": {
+     "color": "#FF000000",
+     "type": "SOLID"
+    },
+    "borderColor": {
+     "color": "#00000000",
+     "type": "SOLID"
+    },
+    "borderRadius": 0,
+    "borderWidth": 0,
+    "height": 248,
+    "locked": false,
+    "visible": true,
+    "width": 780,
+    "x": 0,
+    "y": 0
+   },
+   "guides": [],
+   "id": 33,
+   "image": {
+    "src": ""
+   },
+   "macros": {},
+   "name": "ETS2 Truck Cluster (mph)",
+   "plugins": [],
+   "type": "Screen.qml"
+  }
+ ],
+ "effect": {
+  "gravitySensorEnabled": false,
+  "rotation": 0
+ },
+ "general": {
+  "backgroundColor": {
+   "color": "#FF000000",
+   "type": "SOLID"
+  },
+  "borderColor": {
+   "color": "#00000000",
+   "type": "SOLID"
+  },
+  "borderRadius": 0,
+  "borderWidth": 0,
+  "height": 248,
+  "locked": false,
+  "visible": true,
+  "width": 780,
+  "x": 0,
+  "y": 0
+ },
+ "id": 0,
+ "imageResources": [],
+ "lastModified": 1783687246,
+ "macros": {},
+ "name": "ETS2 Truck Cluster",
+ "plugins": [],
+ "type": "Window.qml",
+ "version": "1.1.1",
+ "window": {
+  "GUID": "awWp10h7Iq1k8qQZWyT56joeGcfoRKDm",
+  "defaultScreenId": 0,
+  "idealDeviceInfos": [
+   {
+    "deviceId": 8,
+    "hardwareVersion": "RS21-W18-HW RGB-DU-V11",
+    "networkId": 1,
+    "productType": "W18 Display"
+   }
+  ]
+ }
+}
