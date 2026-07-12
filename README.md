@@ -36,7 +36,7 @@ Bottom lamps (ghosted dark-gray when inactive, lit when active):
 **OIL** oil pressure low with engine running (red) · **BATT** battery voltage (red) ·
 **coolant °C** (amber on warning or >105°) · **DMG** max of engine/gearbox wear
 (amber >5%, red >25%) · **EB** engine brake (amber) · **RET n** retarder level (cyan) ·
-**CARGO n%** cargo damage (amber, red >10%) · **BEAM** headlights (green low, blue high).
+**TRLR n%** trailer wear (amber >5%, red >25%) · **BEAM** headlights (green low, blue high).
 
 Two screens are included: **km/h** (default) and an identical **mph** variant —
 assign a wheel button to screen-switch in Pit House if you want both.
@@ -76,6 +76,28 @@ Reference docs produced while reverse-engineering (useful for building your own)
   official MOZA Dash Community files.
 - [`docs/ets2-telemetry.md`](docs/ets2-telemetry.md) — MOZA's full 455-channel
   telemetry catalog and exactly which channels ETS2 populates.
+
+## Pit House quirks (found on real hardware)
+
+Three ETS2 channels behave differently from what MOZA's catalog documents;
+the dash accounts for all three:
+
+- **`NavigationSpeedLimit` arrives in km/h, not m/s.** The catalog documents
+  m/s (the SCS SDK unit), but Pit House passes the value through already
+  converted — a 90 km/h road reads `90`. The limit sign and the over-limit
+  speed color treat it as km/h (× 0.621371 on the mph screen). Symptom before
+  this fix: the limit sign read 324 (= 90 × 3.6).
+- **`Gear` is the raw gearbox index, not the dashboard gear.** The shared
+  memory Pit House reads has a separate `gearDashboard` field, but no MOZA
+  channel exposes it. With a crawler gearbox (e.g. a 12+2: C1, C2, 1–12) raw
+  gear 14 is the HUD's gear 12. If you run such a box, set `CRAWLER_GEARS = 2`
+  in `generate.py` and rebuild — gears then display as C1 / C2 / 1…12,
+  matching the in-game HUD.
+- **`CargoDamage` is actually trailer chassis wear.** The shared-memory
+  struct (SDK 1.5 era) has no cargo-damage field at all; its `wearTrailer`
+  float is bound to the trailer *chassis wear* channel. The lamp is labeled
+  **TRLR** accordingly — expect it to creep up with mileage even while the
+  in-game job screen shows 0% cargo damage.
 
 ## Notes & caveats
 

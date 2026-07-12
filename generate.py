@@ -166,16 +166,30 @@ def expr_speed(unit_ch):
 
 
 def expr_speed_color(unit_ch, limit_factor):
-    # Red digits when >2 over the navigation speed limit (limit is m/s).
+    # Red digits when >2 over the navigation speed limit (limit arrives in
+    # km/h from Pit House, despite the catalog documenting m/s — see README).
     return (f'((s={num(unit_ch)},l={num("NavigationSpeedLimit")}*{limit_factor})=>'
             f'(!isNaN(s)&&!isNaN(l)&&l>0.5&&l<1e30&&Math.abs(s)>l+2)'
             f'?"{J_RED}":"{J_WHITE}")()')
 
 
+# Pit House feeds `Gear` from the raw gearbox index (SCS `truck.engine.gear`),
+# not the dashboard gear (`truck.displayed.gear`), and MOZA's catalog has no
+# display-gear channel. On a 12+2 crawler box the crawlers occupy raw 1-2, so
+# the HUD's top gear 12 arrives here as 14. If your gearbox has crawler gears,
+# set CRAWLER_GEARS (2 for the Scania/Volvo "12+2") and rebuild: raw 1..N show
+# as C1..CN and higher gears are renumbered to match the in-game HUD.
+CRAWLER_GEARS = 0
+
+_FWD_GEAR_JS = (
+    (f'(v<={CRAWLER_GEARS}?"C"+Math.round(v)'
+     f':Math.round(v-{CRAWLER_GEARS}).toString())')
+    if CRAWLER_GEARS else 'Math.round(v).toString()')
+
 EXPR_GEAR = (f'((v={num("Gear")})=>{{if({GUARD})return"-";'
              'if(v==0)return"N";if(v==-1)return"R";'
              'if(v<0)return"R"+Math.abs(Math.round(v));'
-             'return Math.round(v).toString();})()')
+             f'return {_FWD_GEAR_JS};}})()')
 
 EXPR_GEAR_COLOR = (f'((v={num("Gear")})=>{GUARD}?"{J_GRAY}"'
                    f':(v<0?"{J_AMBER}":(v==0?"{J_GRAY}":"{J_GREEN}")))()')
@@ -270,10 +284,15 @@ EXPR_RET_COLOR = (f'((v={num("RetarderLevel")})=>(!isNaN(v)&&v>0&&v<1e30)'
 EXPR_BEAM = (f'((h={num("HighBeamLight")},l={num("LowBeamLight")})=>'
              f'h==1?"{J_BLUE}":(l==1?"{J_GREEN}":"{J_DIM}"))()')
 EXPR_EBRAKE = lamp_color(f'{num("EngineBrake")}==1', on=J_AMBER)
-EXPR_CARGO_TEXT = (f'((v={num("CargoDamage")})=>(isNaN(v)||v<0||v>1)?"CARGO"'
-                   ':"CARGO "+Math.round(v*100)+"%")()')
-EXPR_CARGO_COLOR = (f'((v={num("CargoDamage")}*100)=>'
-                    f'v>10?"{J_RED}":(v>0.5?"{J_AMBER}":"{J_DIM}"))()')
+# The CargoDamage channel is NOT job cargo damage: the shared-memory plugin
+# Pit House reads (SDK 1.5 struct) has no cargo-damage field, and its
+# wearTrailer float is bound to TRAILER_CHANNEL_wear_chassis. So this value
+# is trailer chassis wear 0-1 — label it TRLR and use wear-style thresholds.
+EXPR_TRAILER_TEXT = (f'((v={num("CargoDamage")})=>(isNaN(v)||v<0||v>1)?"TRLR"'
+                     ':"TRLR "+Math.round(v*100)+"%")()')
+EXPR_TRAILER_COLOR = (f'((v={num("CargoDamage")}*100)=>'
+                      f'(isNaN(v)||v<0||v>100)?"{J_DIM}"'
+                      f':(v>25?"{J_RED}":(v>5?"{J_AMBER}":"{J_DIM}")))()')
 
 
 # ----------------------------------------------------------- the layout -----
@@ -281,7 +300,10 @@ def build_screen(name, mph=False):
     """One full 780x248 screen. mph=False -> km/h, True -> mph variant."""
     speed_ch = "SpeedMph" if mph else "SpeedKmh"
     cruise_ch = "CruiseControlMph" if mph else "CruiseControl"
-    limit_factor = 2.2369363 if mph else 3.6
+    # NavigationSpeedLimit is documented as m/s in MOZA's catalog, but Pit
+    # House delivers it already converted to km/h (a 90 km/h road reads 90,
+    # not 25 — multiplying by 3.6 displayed 324).
+    limit_factor = 0.621371 if mph else 1.0
     unit_label = "mph" if mph else "km/h"
 
     scr = base_node("Screen.qml", name, 0, 0, W, H, BG)
@@ -383,8 +405,8 @@ def build_screen(name, mph=False):
     lamp("damage", 324, 96, "DMG", EXPR_DMG_COLOR, EXPR_DMG_TEXT, size=20)
     lamp("engine brake", 428, 44, "EB", EXPR_EBRAKE)
     lamp("retarder", 480, 72, "RET", EXPR_RET_COLOR, EXPR_RET_TEXT, size=20)
-    lamp("cargo", 560, 112, "CARGO", EXPR_CARGO_COLOR, EXPR_CARGO_TEXT,
-         size=20)
+    lamp("trailer wear", 560, 112, "TRLR", EXPR_TRAILER_COLOR,
+         EXPR_TRAILER_TEXT, size=20)
     lamp("beam", 686, 86, "BEAM", EXPR_BEAM, size=20)
 
     return scr
@@ -431,10 +453,14 @@ def render_preview(path, state):
     S = 2  # supersample
     img = Image.new("RGB", (W * S, H * S), (0, 0, 0))
     d = ImageDraw.Draw(img)
-    DEJAVU = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    bold = next(p for p in (
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",  # Linux
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",     # macOS
+        "C:/Windows/Fonts/arialbd.ttf",                          # Windows
+    ) if Path(p).exists())
 
     def font(px):
-        return ImageFont.truetype(DEJAVU, int(px * S * 0.92))
+        return ImageFont.truetype(bold, int(px * S * 0.92))
 
     def c(argb):  # "#AARRGGBB"/"#RRGGBB" -> rgb tuple
         hx = argb.lstrip("#")
@@ -470,10 +496,17 @@ def render_preview(path, state):
         box(round(W * i / 4) - 1, 0, 2, 20, (0, 0, 0))
     txt(10, 24, 130, 22, f"{v['rpm']} rpm", 18, c(GRAY), "l")
     txt(530, 24, 140, 20, f"{v['odo']} km", 18, c(GRAY), "r")
+    def arrow(x, y, w, h, left):
+        # drawn as a polygon: preview fonts may lack the ◀/▶ glyphs
+        x0, x1 = (x + w * 0.8, x + w * 0.15) if left else (x + w * 0.2,
+                                                           x + w * 0.85)
+        d.polygon([(x1 * S, (y + h / 2) * S), (x0 * S, (y + h * 0.12) * S),
+                   (x0 * S, (y + h * 0.88) * S)], fill=c(J_GREEN))
+
     if v["blink_l"]:
-        txt(157, 28, 46, 42, "◀", 32, c(J_GREEN))
+        arrow(157, 28, 46, 42, left=True)
     if v["blink_r"]:
-        txt(477, 28, 46, 42, "▶", 32, c(J_GREEN))
+        arrow(477, 28, 46, 42, left=False)
     if v["limit"]:
         box(30, 52, 70, 70, c(WHITE), radius=35, outline=c(LIMIT_RING), ow=6)
         txt(30, 52, 70, 70, str(v["limit"]), 30, (0, 0, 0))
@@ -516,9 +549,9 @@ def render_preview(path, state):
     lamp(428, 44, "EB", c(J_AMBER), v["ebrake"])
     lamp(480, 72, f"RET {v['ret']}" if v["ret"] else "RET", c(J_CYAN),
          v["ret"] > 0, 20)
-    cargo = v["cargo"]
-    lamp(560, 112, f"CARGO {cargo}%" if cargo else "CARGO",
-         c(J_RED) if cargo > 10 else c(J_AMBER), cargo > 0, 20)
+    trailer = v["trailer"]
+    lamp(560, 112, f"TRLR {trailer}%" if trailer else "TRLR",
+         c(J_RED) if trailer > 25 else c(J_AMBER), trailer > 5, 20)
     lamp(686, 86, "BEAM", c(J_BLUE) if v["beam"] == 2 else c(J_GREEN),
          v["beam"] > 0, 20)
 
@@ -530,13 +563,13 @@ STATE_CRUISING = dict(rpm=1250, rpm_pct=48, odo=182432, blink_l=False,
                       blink_r=False, limit=80, cruise=80, speed=79, gear="9",
                       fuel_pct=64, fuel_l=448, park=False, air=0, oil=False,
                       batt=False, water=86, water_warn=False, dmg=2,
-                      ebrake=False, ret=0, beam=1, range=1470, cargo=0)
+                      ebrake=False, ret=0, beam=1, range=1470, trailer=0)
 
 STATE_WARNINGS = dict(rpm=2210, rpm_pct=94, odo=182432, blink_l=True,
                       blink_r=False, limit=60, cruise=0, speed=67, gear="7",
                       fuel_pct=8, fuel_l=56, park=True, air=1, oil=False,
                       batt=True, water=107, water_warn=True, dmg=31,
-                      ebrake=True, ret=3, beam=2, range=84, cargo=12)
+                      ebrake=True, ret=3, beam=2, range=84, trailer=12)
 
 
 # ----------------------------------------------------------------- main -----

@@ -794,7 +794,7 @@
       },
       "text.text": {
        "methods": [
-        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?Math.round(v*3.6).toString():\"\")()"
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?Math.round(v*1.0).toString():\"\")()"
        ],
        "type": "METHOD_CHAINING"
       }
@@ -988,7 +988,7 @@
      "binding": {
       "text.fontColor": {
        "methods": [
-        "((s=Number(Telemetry.get(\"v1/gameData/SpeedKmh\").value),l=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value)*3.6)=>(!isNaN(s)&&!isNaN(l)&&l>0.5&&l<1e30&&Math.abs(s)>l+2)?\"#FF1744\":\"#FFFFFF\")()"
+        "((s=Number(Telemetry.get(\"v1/gameData/SpeedKmh\").value),l=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value)*1.0)=>(!isNaN(s)&&!isNaN(l)&&l>0.5&&l<1e30&&Math.abs(s)>l+2)?\"#FF1744\":\"#FFFFFF\")()"
        ],
        "type": "METHOD_CHAINING"
       },
@@ -2650,13 +2650,13 @@
      "binding": {
       "text.fontColor": {
        "methods": [
-        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value)*100)=>v>10?\"#FF1744\":(v>0.5?\"#FFB300\":\"#2E2E2E\"))()"
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value)*100)=>(isNaN(v)||v<0||v>100)?\"#2E2E2E\":(v>25?\"#FF1744\":(v>5?\"#FFB300\":\"#2E2E2E\")))()"
        ],
        "type": "METHOD_CHAINING"
       },
       "text.text": {
        "methods": [
-        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value))=>(isNaN(v)||v<0||v>1)?\"CARGO\":\"CARGO \"+Math.round(v*100)+\"%\")()"
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value))=>(isNaN(v)||v<0||v>1)?\"TRLR\":\"TRLR \"+Math.round(v*100)+\"%\")()"
        ],
        "type": "METHOD_CHAINING"
       }
@@ -2715,7 +2715,7 @@
      },
      "id": 31,
      "macros": {},
-     "name": "cargo",
+     "name": "trailer wear",
      "plugins": [],
      "text": {
       "fontColor": {
@@ -2730,7 +2730,7 @@
       "paddingLeft": 0,
       "paddingRight": 0,
       "paddingTop": 0,
-      "text": "CARGO",
+      "text": "TRLR",
       "verticalAlignment": "AlignCenter",
       "wrapText": false
      },
@@ -3652,7 +3652,7 @@
       },
       "text.text": {
        "methods": [
-        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?Math.round(v*2.2369363).toString():\"\")()"
+        "((v=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value))=>(!isNaN(v)&&v>0.5&&v<1e30)?Math.round(v*0.621371).toString():\"\")()"
        ],
        "type": "METHOD_CHAINING"
       }
@@ -3846,7 +3846,7 @@
      "binding": {
       "text.fontColor": {
        "methods": [
-        "((s=Number(Telemetry.get(\"v1/gameData/SpeedMph\").value),l=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value)*2.2369363)=>(!isNaN(s)&&!isNaN(l)&&l>0.5&&l<1e30&&Math.abs(s)>l+2)?\"#FF1744\":\"#FFFFFF\")()"
+        "((s=Number(Telemetry.get(\"v1/gameData/SpeedMph\").value),l=Number(Telemetry.get(\"v1/gameData/NavigationSpeedLimit\").value)*0.621371)=>(!isNaN(s)&&!isNaN(l)&&l>0.5&&l<1e30&&Math.abs(s)>l+2)?\"#FF1744\":\"#FFFFFF\")()"
        ],
        "type": "METHOD_CHAINING"
       },
@@ -5508,13 +5508,13 @@
      "binding": {
       "text.fontColor": {
        "methods": [
-        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value)*100)=>v>10?\"#FF1744\":(v>0.5?\"#FFB300\":\"#2E2E2E\"))()"
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value)*100)=>(isNaN(v)||v<0||v>100)?\"#2E2E2E\":(v>25?\"#FF1744\":(v>5?\"#FFB300\":\"#2E2E2E\")))()"
        ],
        "type": "METHOD_CHAINING"
       },
       "text.text": {
        "methods": [
-        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value))=>(isNaN(v)||v<0||v>1)?\"CARGO\":\"CARGO \"+Math.round(v*100)+\"%\")()"
+        "((v=Number(Telemetry.get(\"v1/gameData/CargoDamage\").value))=>(isNaN(v)||v<0||v>1)?\"TRLR\":\"TRLR \"+Math.round(v*100)+\"%\")()"
        ],
        "type": "METHOD_CHAINING"
       }
@@ -5573,7 +5573,7 @@
      },
      "id": 63,
      "macros": {},
-     "name": "cargo",
+     "name": "trailer wear",
      "plugins": [],
      "text": {
       "fontColor": {
@@ -5588,7 +5588,7 @@
       "paddingLeft": 0,
       "paddingRight": 0,
       "paddingTop": 0,
-      "text": "CARGO",
+      "text": "TRLR",
       "verticalAlignment": "AlignCenter",
       "wrapText": false
      },
@@ -5759,14 +5759,14 @@
  },
  "id": 0,
  "imageResources": [],
- "lastModified": 1783687246,
+ "lastModified": 1783816139,
  "macros": {},
  "name": "ETS2 Truck Cluster",
  "plugins": [],
  "type": "Window.qml",
  "version": "1.1.1",
  "window": {
-  "GUID": "awWp10h7Iq1k8qQZWyT56joeGcfoRKDm",
+  "GUID": "BnTUkz7xFG6oEsCgMCDmwKxvEhtndPpF",
   "defaultScreenId": 0,
   "idealDeviceInfos": [
    {

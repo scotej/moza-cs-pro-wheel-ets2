@@ -72,7 +72,7 @@ const LIVE = {
   Gear: 9, SpeedKmh: 79, SpeedMph: 49, Rpm: 1250, MaxRpm: 2500,
   CarSettings_CurrentDisplayedRPMPercent: 48, FuelRemainder: 64, Fuel: 448,
   FuelRange: 1470, CruiseControl: 80, CruiseControlMph: 50,
-  NavigationSpeedLimit: 22.2, ParkingBrake: 0, RetarderLevel: 0,
+  NavigationSpeedLimit: 80, ParkingBrake: 0, RetarderLevel: 0,
   LBlinker: 0, RBlinker: 0, HazardWarning: 0, LowBeamLight: 1,
   HighBeamLight: 0, AirPressure: 120, AirPressWarning: 0,
   AirPressEmergency: 0, BatteryWarningVolt: 0, WaterTemp: 86,

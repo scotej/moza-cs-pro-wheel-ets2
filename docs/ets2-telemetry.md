@@ -77,7 +77,7 @@ This governs the wheel-screen stream cadence.
 | `v1/gameData/MaxRpm` | int | Max engine RPM |
 | `v1/gameData/CarSettings_CurrentDisplayedRPMPercent` | float | RPM percent 0–100 |
 | `v1/gameData/SpeedKmh` / `SpeedMph` / `SpeedMs` | number | Vehicle speed in km/h, mph, m/s |
-| `v1/gameData/Gear` | int | **-1 = R, 0 = N, 1–12 forward** (catalog range: `-1(R)、0(N)、1~12`) |
+| `v1/gameData/Gear` | int | **-1 = R, 0 = N, 1–12 forward** (catalog range: `-1(R)、0(N)、1~12`); field-observed: raw gearbox index incl. crawler gears, not the HUD gear (see §4.3 corrections) |
 | `v1/gameData/CarSettings_MaxGears` | int | Max gear count |
 | `v1/gameData/Throttle` / `Brake` / `Clutch` | float | Pedal positions **0–1** |
 | `v1/gameData/Handbrake` | bool | Handbrake on |
@@ -89,7 +89,7 @@ This governs the wheel-screen stream cadence.
 | `v1/gameData/CruiseControl` | float | Cruise-control set speed in **km/h**, 0 = CC off |
 | `v1/gameData/CruiseControlMph` | float | Cruise set speed in mph (catalog desc mistakenly says m/s) |
 | `v1/gameData/CruiseControlMs` | float | Cruise set speed in m/s |
-| `v1/gameData/NavigationSpeedLimit` | float | Truck route-advisor speed limit, **m/s** (verbatim: "In m/s") |
+| `v1/gameData/NavigationSpeedLimit` | float | Truck route-advisor speed limit. Catalog says m/s, but **field-observed: km/h** (see §4.3 corrections) |
 | `v1/gameData/JobSpeedLimitValue` | float | Job speed-limit setting |
 | `v1/gameData/RetarderLevel` | int | Current retarder level |
 | `v1/gameData/EngineBrake` | bool | Engine/motor brake enabled |
@@ -107,7 +107,7 @@ This governs the wheel-screen stream cadence.
 | `v1/gameData/FuelTemp` | float | Catalog name is FuelTemp but description says **"Oil Temperature"** (mapped to oil temp in truck sims) |
 | `v1/gameData/EngineDamage` | int | Engine wear percent 0–100 (catalog `name`: EngineWear) |
 | `v1/gameData/GearBoxDamage` | int | Transmission wear percent 0–100 |
-| `v1/gameData/CargoDamage` | float | Cargo damage 0.0–1.0 |
+| `v1/gameData/CargoDamage` | float | 0.0–1.0; field-observed: actually **trailer chassis wear**, not cargo damage (see §4.3 corrections) |
 | `v1/gameData/Odometer` | float | Odometer, **km** |
 | `v1/gameData/InCome` | int | Job income |
 | `v1/gameData/NextRestStop` | int | Minutes to next rest stop |
@@ -181,13 +181,32 @@ actively streamed for these games.
 
 ### 4.3 Value conventions relevant to ETS2
 
+> **Field-observed corrections (2026-07-11, CS Pro + ETS2 on real hardware).**
+> Three channels do NOT behave as the catalog text says:
+>
+> 1. **`NavigationSpeedLimit` is delivered in km/h, not m/s.** A 90 km/h road
+>    reads `90` (multiplying by 3.6 displayed 324). The catalog's "In m/s"
+>    describes the SCS-SDK-side quantity; Pit House converts before exposing
+>    it, consistent with SimHub's `SpeedLimitKmh` and with AZOM feeding the
+>    km/h value unconverted into the ×100 `nav_speed_limit` wire encoder.
+> 2. **`Gear` is the raw gearbox index (`truck.engine.gear`), not the
+>    dashboard gear.** On a 12+2 crawler box, HUD gear 12 arrives as 14
+>    (crawlers occupy raw 1–2). The plugin's `gearDashboard` field
+>    (`truck.displayed.gear`) exists in shared memory but has no MOZA channel.
+> 3. **`CargoDamage` carries trailer chassis wear, not job cargo damage.**
+>    The SDK 1.5 shared-memory struct has no cargo-damage field; its
+>    `wearTrailer` float is bound to `TRAILER_CHANNEL_wear_chassis`
+>    (ets2-telemetry.cpp line 453). Observed: 11% shown while the in-game job
+>    screen reported 0% cargo damage. Scale is still 0.0–1.0.
+
 - **Gear**: number; `-1` = reverse, `0` = neutral, `1..N` forward (catalog documents 1–12; the
   wheel-stream encoding `int30` is 5-bit, reverse sent as raw 31). ETS2 trucks with >12 gears may
-  clamp on wheel screens; whether Pit House uses SCS `gear` or `gearDashboard` (display gear with
-  range logic) is not documented. In expressions:
+  clamp on wheel screens; Pit House uses SCS `gear` (raw index), NOT `gearDashboard` — confirmed
+  in the field (see the §4.3 corrections above). In expressions:
   `Telemetry.get('v1/gameData/Gear').value == -1 ? 'R' : (v == 0 ? 'N' : v)`.
 - **Speed**: SCS SDK delivers m/s; MOZA precomputes `SpeedKmh` / `SpeedMph` / `SpeedMs` — no
-  manual conversion needed. `NavigationSpeedLimit` stays in **m/s** (×3.6 for km/h).
+  manual conversion needed. `NavigationSpeedLimit` is likewise pre-converted to **km/h**
+  despite the catalog's "In m/s" text (see the §4.3 corrections above).
 - **Cruise control**: `CruiseControl` km/h, `CruiseControlMs` m/s, `CruiseControlMph` mph;
   value 0 ⇒ cruise off (usable as a boolean).
 - **Warning lamps available**: air pressure (warning + emergency), battery voltage, water temp.
@@ -198,8 +217,16 @@ actively streamed for these games.
 - **Also missing** vs the SCS struct: `routeDistance` / `routeTime` (navigation ETA — only
   `NextRestStop` minutes exist), trailer data (attached/mass/name), `batteryVoltage` numeric,
   wear for cabin/chassis/wheels/trailer, truck make/brand strings.
+- **Driver assistance is not in telemetry at all**: ETS2's Adaptive Cruise Control /
+  Emergency Braking (the auto-stop-before-collision gameplay setting, console vars
+  `g_acc` / `g_emergency_brake`, introduced ~1.44/1.47) is exposed by NO SCS SDK channel,
+  config attribute, or event — verified against the latest SDK (protocol 1.18, still
+  current as of game 1.58) and MOZA's full 455-channel catalog (2026-07-11). Neither the
+  setting's on/off state nor active auto-braking can be shown on any dashboard; the wheel
+  firmware also drops channel URLs outside the catalog, so a custom channel can't be added.
 - **Damage**: `EngineDamage`/`GearBoxDamage` are 0–100 percent (SCS `wearEngine`/`wearTransmission`
-  ×100); `CargoDamage` is 0.0–1.0.
+  ×100); `CargoDamage` is 0.0–1.0 and actually carries trailer chassis wear (see the §4.3
+  corrections above).
 - ETS2 has no laps/sectors/flags — those channels read 0/default; `CurrentLapTime`-style timing
   and tyre temp/pressure channels are unsupported per MOZA's matrix.
 
